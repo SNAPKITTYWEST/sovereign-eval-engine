@@ -1,0 +1,17 @@
+# Binaries
+*.exe
+*.out
+*.test
+*.prof
+
+# IDE
+.idea/
+.vscode/
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Go
+vendor/
