@@ -130,11 +130,14 @@ graph LR
         DOCS[Documentation<br/>1,727 LOC]
     end
 
+    subgraph "Complete ✓ — Judge"
+        JUDGE[Sovereign Judge<br/>scoring engine<br/>deterministic rubric eval]
+    end
+
     subgraph "Designed — Not Yet Built"
         MUMPS[M/MUMPS Gateway]
         CONST[Constraint Engine]
         LEAN[Lean4 Verification]
-        JUDGE[Semantic Judge]
         GPU[CUDA Kernels]
         CRYPTO[Crypto Provenance]
         REPLAY[Replay Determinism]
@@ -144,10 +147,10 @@ graph LR
     style ARCH fill:#0d3320,stroke:#22c55e,color:#e2e8f0
     style LED fill:#0d3320,stroke:#22c55e,color:#e2e8f0
     style DOCS fill:#0d3320,stroke:#22c55e,color:#e2e8f0
+    style JUDGE fill:#0d3320,stroke:#22c55e,color:#e2e8f0
     style MUMPS fill:#1a1a2e,stroke:#60a5fa,color:#e2e8f0
     style CONST fill:#1a1a2e,stroke:#60a5fa,color:#e2e8f0
     style LEAN fill:#1a1a2e,stroke:#60a5fa,color:#e2e8f0
-    style JUDGE fill:#1a1a2e,stroke:#60a5fa,color:#e2e8f0
     style GPU fill:#1a1a2e,stroke:#60a5fa,color:#e2e8f0
     style CRYPTO fill:#1a1a2e,stroke:#60a5fa,color:#e2e8f0
     style REPLAY fill:#1a1a2e,stroke:#60a5fa,color:#e2e8f0
@@ -163,6 +166,11 @@ sovereign-eval-engine/
 ├── docs/
 │   ├── SOVEREIGN_AI_EVALUATION_ENGINE.md    Full implementation guide (1,727 LOC)
 │   └── SOVEREIGN_EVALUATION_ENGINE_SPEC.md  Architecture specification (1,086 LOC)
+│
+├── judge/                                   Sovereign Judge scoring engine (Go)
+│   ├── go.mod                               Module definition
+│   └── main.go                              Deterministic rubric evaluation, air-gapped scoring,
+│                                             audit trail hash generation
 │
 └── ledger/                                  Immutable event ledger (Go)
     ├── go.mod                               Module definition
